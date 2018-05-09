@@ -39,6 +39,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -405,7 +406,10 @@ public class RecordActivity extends AppCompatActivity implements OnMapReadyCallb
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         if (!isAlreadyStartedService) {
             mGoogleMap.addMarker(new MarkerOptions().position(latLng));
-            markerCurrent = mGoogleMap.addMarker(new MarkerOptions().position(latLng));
+            markerCurrent = mGoogleMap.addMarker(new MarkerOptions()
+                    .position(latLng)
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_my_location))
+            );
             mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f));
             isAlreadyStartedService = true;
         } else {

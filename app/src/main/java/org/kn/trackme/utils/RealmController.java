@@ -8,6 +8,7 @@ import org.kn.trackme.model.TrackMeInfo;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 
 public class RealmController {
@@ -67,7 +68,7 @@ public class RealmController {
     //find all objects in the TrackMeInfo.class
     public RealmResults<TrackMeInfo> getTrackMes() {
 
-        return realm.where(TrackMeInfo.class).findAll();
+        return realm.where(TrackMeInfo.class).findAll().sort("id", Sort.DESCENDING);
     }
 
     //query a single item with the given id

@@ -11,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -101,7 +102,12 @@ public class HistoryViewHolder extends RecyclerView.ViewHolder implements OnMapR
         }
         String[] locationBegin = listRouteMaps.get(0).split(",");
         String[] locationEnd = listRouteMaps.get(listRouteMaps.size() - 1).split(",");
-        mGoogleMap.addMarker(new MarkerOptions().position((new LatLng(Double.parseDouble(locationBegin[0]), Double.parseDouble(locationBegin[1])))));
-        mGoogleMap.addMarker(new MarkerOptions().position((new LatLng(Double.parseDouble(locationEnd[0]), Double.parseDouble(locationEnd[1])))));
+        mGoogleMap.addMarker(new MarkerOptions()
+                .position((new LatLng(Double.parseDouble(locationBegin[0]), Double.parseDouble(locationBegin[1]))))
+        );
+        mGoogleMap.addMarker(new MarkerOptions()
+                .position((new LatLng(Double.parseDouble(locationEnd[0]), Double.parseDouble(locationEnd[1]))))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_my_location))
+        );
     }
 }
