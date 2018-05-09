@@ -2,14 +2,14 @@
 
 An application which help user track speed, distance and duration during workout sessions.
 
-##History
+## History
 
 + List out all workout sessions. User may have unlimited sessions​ in history, latest session is on the top of list
 + Application is required to work smoothly​ while user scrolls down to view sessions in past
 + Each session: Display Map Route, Distance, Duration and Average Speed
 + User taps on Record button to start a new session
 
-##Record
+## Record
 
 + Record Current Speed, Current Distance and Duration
 + Display Current Speed, Current Distance and Duration
